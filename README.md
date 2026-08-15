@@ -26,3 +26,30 @@ Known issues:
 1. Only ja-jp (Japanese) x64 is supported. Use this script only with a Japanese-language Windows 11 ISO. If you need another language, replace every instance of ja-jp with the language needed (like en-us, ro-RO and so on), and every x64 instance with arm64.
 
 And that's pretty much it for now!
+
+独自のNano11イメージを作成するためのスクリプトです。
+
+これは、Nano 11のISO作成（ビルド）を自動化するスクリプトです。
+主な目的は、外部ツールを一切使用せず、DISMなどのMicrosoft製ユーティリティのみを利用することです。唯一含まれている実行ファイルは`oscdimg.exe`（Windows ADKに付属し、ブート可能なISOイメージの作成に使用されるもの）のみです。また、OOBE（初期セットアップ）時にMicrosoftアカウントの入力を回避するための無人セットアップ用応答ファイルも含まれています。
+
+Post-setup（セットアップ後の処理）ファイルをダウンロードするにはgitが必要です。インストールしたくない場合は、その手順をスキップできます。
+
+手順:
+
+1. Windows 11のISOをダウンロードします。
+2. ダウンロードしたISOイメージをエクスプローラーでマウントします。
+3. `nano11builder.bat`ファイルを実行します。
+4. イメージがマウントされているドライブ文字を選択します（文字のみ入力し、コロン「:」は含めないでください）。
+5. ベースとするイメージのSKU（エディション）を選択します。
+6. あとは完了するのを待つだけです :)
+7. イメージの作成が完了すると、スクリプトを展開したフォルダに`nano11.iso`という名前で保存されます。
+
+削除されるもの:
+
+Nano11で削除されるすべての要素
+
+既知の問題:
+
+1. ja-jp（日本語）のx64版のみサポートされています。日本語版のWindows 11 ISOでのみこのスクリプトを使用してください。他の言語が必要な場合は、`ja-jp`を必要な言語（`en-us`、`ro-RO`など）に、`x64`を`arm64`にすべて置き換えてください。
+
+現時点では以上です！
